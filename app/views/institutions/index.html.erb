@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Contacts</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @institutions.each do |institution| %>
       <tr>
         <td><%= institution.name %></td>
+        <td><%= institution.contacts.length %></td>
         <td><%= link_to 'Add Contact', new_institution_contact_path(institution) %></td>
         <td><%= link_to 'Show', institution %></td>
         <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
