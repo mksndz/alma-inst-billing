@@ -27,5 +27,20 @@ RSpec.describe Contact, type: :model do
     expect(c.institution).to be_an Institution
   end
 
+  # VALIDATIONS
+
+  it 'must have a unique name' do
+    Fabricate :contact
+    expect {
+      Fabricate :contact
+    }.to raise_error ActiveRecord::RecordInvalid
+  end
+
+  it 'must have a unique email' do
+    Fabricate :contact
+    expect {
+      Fabricate :contact
+    }.to raise_error ActiveRecord::RecordInvalid
+  end
 
 end

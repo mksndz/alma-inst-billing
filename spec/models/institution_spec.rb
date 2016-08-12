@@ -17,4 +17,13 @@ RSpec.describe Institution, type: :model do
     expect(i.phone).to be_a String
   end
 
+  # VALIDATIONS
+
+  it 'must have a unique name' do
+    Fabricate :institution
+    expect {
+      Fabricate :institution
+    }.to raise_error ActiveRecord::RecordInvalid
+  end
+
 end
