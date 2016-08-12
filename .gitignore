@@ -16,6 +16,3 @@
 /log/*
 !/log/.keep
 /tmp
-
-# secret stuff
-config/secrets.yml
