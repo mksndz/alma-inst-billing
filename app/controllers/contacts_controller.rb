@@ -1,6 +1,8 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_institution
+
   # GET /contacts
   # GET /contacts.json
   def index
@@ -65,6 +67,10 @@ class ContactsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
       @contact = Contact.find(params[:id])
+    end
+
+  def set_institution
+      @institution = Institution.find(params[:institution_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :contacts
-  resources :institutions
+
+  resources :institutions do
+    resources :contacts
+  end
 
   root 'application#index'
+
 end
