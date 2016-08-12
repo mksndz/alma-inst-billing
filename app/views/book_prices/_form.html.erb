@@ -1,0 +1,33 @@
+<%= form_for(@book_price) do |f| %>
+  <% if @book_price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book_price.errors.count, "error") %> prohibited this book_price from being saved:</h2>
+
+      <ul>
+      <% @book_price.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lc_start %><br>
+    <%= f.text_field :lc_start %>
+  </div>
+  <div class="field">
+    <%= f.label :lc_end %><br>
+    <%= f.text_field :lc_end %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
