@@ -5,13 +5,16 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Name</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @institutions.each do |institution| %>
       <tr>
+        <td><%= institution.name %></td>
+        <td><%= link_to 'Add Contact', new_institution_contact_path(institution) %></td>
         <td><%= link_to 'Show', institution %></td>
         <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
         <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
