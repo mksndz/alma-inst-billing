@@ -1,0 +1,2 @@
+Fabricator(:institution) do
+end
