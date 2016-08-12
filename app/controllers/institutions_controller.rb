@@ -52,12 +52,10 @@ class InstitutionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_institution
       @institution = Institution.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def institution_params
       params.fetch(:institution).permit(:name, :address, :email, :api_key)
     end
