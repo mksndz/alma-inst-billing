@@ -1,4 +1,21 @@
+<h1><%= @contact.name %></h1>
+
+<h3>Contact for <%= link_to(@institution.name, @institution) %></h3>
+
 <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name: </strong> <%= @contact.name %>
+</p>
+<p>
+  <strong>Email: </strong> <%= @contact.email %>
+</p>
+<p>
+  <strong>Address: </strong> <%= @contact.address %>
+</p>
+<p>
+  <strong>Phone: </strong> <%= @contact.phone %>
+</p>
 
 <%= link_to 'Edit', edit_institution_contact_path(@institution, @contact) %> |
 <%= link_to 'Back', institution_contacts_path(@institution) %>
