@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1>Book Prices</h1>
 
-<h1>Listing Book Prices</h1>
-
-<table class="table">
-  <thead>
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-default">
     <tr>
       <th>LC Start</th>
       <th>LC End</th>
@@ -11,17 +10,18 @@
       <th>Price</th>
       <th>Last Updated</th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @book_prices.each do |book_price| %>
-      <tr>
-        <td><%= book_price.lc_start %></td>
-        <td><%= book_price.lc_end %></td>
-        <td><%= book_price.description %></td>
-        <td><%= link_to number_to_currency(book_price.price), edit_book_price_path(book_price) %></td>
-        <td><%= book_price.updated_at.to_formatted_s :short %></td>
-      </tr>
+        <tr>
+          <td><%= book_price.lc_start %></td>
+          <td><%= book_price.lc_end %></td>
+          <td><%= book_price.description %></td>
+          <td><%= link_to number_to_currency(book_price.price), edit_book_price_path(book_price) %></td>
+          <td><%= book_price.updated_at.to_formatted_s :short %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
