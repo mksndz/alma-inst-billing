@@ -2,7 +2,6 @@ class BookPricesController < ApplicationController
   before_action :set_book_price, only: [:edit, :update, :destroy]
 
   # GET /book_prices
-  # GET /book_prices.json
   def index
     @book_prices = BookPrice.all
   end
@@ -17,42 +16,34 @@ class BookPricesController < ApplicationController
   end
 
   # POST /book_prices
-  # POST /book_prices.json
   def create
     @book_price = BookPrice.new(book_price_params)
 
     respond_to do |format|
       if @book_price.save
-        format.html { redirect_to @book_price, notice: 'Book price was successfully created.' }
-        format.json { render :show, status: :created, location: @book_price }
+        format.html { redirect_to book_prices_path, notice: 'Book price was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @book_price.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /book_prices/1
-  # PATCH/PUT /book_prices/1.json
   def update
     respond_to do |format|
       if @book_price.update(book_price_params)
-        format.html { redirect_to @book_price, notice: 'Book price was successfully updated.' }
-        format.json { render :show, status: :ok, location: @book_price }
+        format.html { redirect_to book_prices_path, notice: 'Book price was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @book_price.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /book_prices/1
-  # DELETE /book_prices/1.json
   def destroy
     @book_price.destroy
     respond_to do |format|
-      format.html { redirect_to book_prices_url, notice: 'Book price was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to book_prices_path, notice: 'Book price was successfully destroyed.' }
     end
   end
 
