@@ -55,6 +55,6 @@ class BookPricesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_price_params
-      params.require(:book_price).permit(:lc_start, :lc_end, :description, :price)
+      params.require(:book_price).permit(:price)
     end
 end

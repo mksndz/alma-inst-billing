@@ -1,7 +1,7 @@
 <%= form_for(@book_price) do |f| %>
   <% if @book_price.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@book_price.errors.count, "error") %> prohibited this book_price from being saved:</h2>
+    <div class="alert alert-danger">
+      <strong><%= pluralize(@book_price.errors.count, "error") %> prohibited this book_price from being saved:</strong>
 
       <ul>
       <% @book_price.errors.full_messages.each do |message| %>
@@ -11,23 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :lc_start, 'LC Start' %><br>
-    <%= f.text_field :lc_start %>
-  </div>
-  <div class="field">
-    <%= f.label :lc_end, 'LC End' %><br>
-    <%= f.text_field :lc_end %>
-  </div>
-  <div class="field">
-    <%= f.label :description, 'Description' %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :price, 'Price' %><br>
-    <%= f.number_field :price %>
+    <%= f.number_field :price, class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+
 <% end %>
