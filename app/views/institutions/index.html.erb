@@ -1,30 +1,28 @@
-<p id="notice"><%= notice %></p>
+<h1>Institutions</h1>
 
-<h1>Listing Institutions</h1>
-
-<table>
-  <thead>
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-default">
     <tr>
       <th>Name</th>
       <th>Contacts</th>
       <th colspan="4"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @institutions.each do |institution| %>
-      <tr>
-        <td><%= institution.name %></td>
-        <td><%= link_to  institution.contacts.length, institution_contacts_path(institution) %></td>
-        <td><%= link_to 'Add Contact', new_institution_contact_path(institution) %></td>
-        <td><%= link_to 'Show', institution %></td>
-        <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
-        <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= institution.name %></td>
+          <td><%= link_to  institution.contacts.length, institution_contacts_path(institution) %></td>
+          <td><%= link_to 'Add Contact', new_institution_contact_path(institution) %></td>
+          <td><%= link_to 'Show', institution %></td>
+          <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
+          <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
 
-<br>
-
-<%= link_to 'New Institution', new_institution_path %>
+<%= link_to 'Add Institution', new_institution_path, class: 'btn btn-outline-primary' %>
