@@ -1,0 +1,16 @@
+<nav class="navbar navbar-dark navbar-top bg-inverse">
+  <button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a href="#" class="navbar-brand">USG Institutional Billing</a>
+  <div id="navbar">
+    <nav class="nav navbar-nav pull-xs-left">
+      <%= link_to 'Home', root_path, class: 'nav-item nav-link' %>
+      <%= link_to 'Book Prices', book_prices_path, class: 'nav-item nav-link' %>
+      <%= link_to 'Institutions', institutions_path, class: 'nav-item nav-link' %>
+    </nav>
+  </div>
+</nav>
