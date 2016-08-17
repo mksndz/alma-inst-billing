@@ -2,14 +2,14 @@
 
 <h1>Listing Book Prices</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>LC Start</th>
       <th>LC End</th>
       <th>Description</th>
       <th>Price</th>
-      <th colspan="3"></th>
+      <th>Last Updated</th>
     </tr>
   </thead>
 
@@ -19,15 +19,9 @@
         <td><%= book_price.lc_start %></td>
         <td><%= book_price.lc_end %></td>
         <td><%= book_price.description %></td>
-        <td><%= book_price.price %></td>
-        <td><%= link_to 'Show', book_price %></td>
-        <td><%= link_to 'Edit', edit_book_price_path(book_price) %></td>
-        <td><%= link_to 'Destroy', book_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to number_to_currency(book_price.price), edit_book_price_path(book_price) %></td>
+        <td><%= book_price.updated_at.to_formatted_s :short %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Book price', new_book_price_path %>
