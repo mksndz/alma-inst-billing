@@ -1,0 +1,11 @@
+<h1>Alma API Sandbox</h1>
+
+<h3>For <%= @institution.name %></h3>
+
+<% unless @institution.api_key %>
+  <div class="alert alert-danger">
+    <strong>NO API KEY SET FOR THIS INSTITUTION!</strong> These will not work
+  </div>
+<% end %>
+
+<%= link_to 'Get Users', institution_users_path %> | <%= link_to '50', institution_users_path(count: 50) %> | <%= link_to '200', institution_users_path(count: 200) %>
