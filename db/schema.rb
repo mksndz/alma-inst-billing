@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817131657) do
+ActiveRecord::Schema.define(version: 20160822204308) do
 
   create_table "book_prices", force: :cascade do |t|
     t.string   "lc_start"
@@ -24,12 +24,22 @@ ActiveRecord::Schema.define(version: 20160817131657) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name",           null: false
-    t.string   "address",        null: false
     t.string   "phone",          null: false
     t.string   "email",          null: false
     t.integer  "institution_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.boolean  "notify"
+    t.boolean  "bill"
+    t.string   "branch_campus"
+    t.string   "feid"
+    t.string   "pay_to"
+    t.string   "pay_types"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
   end
 
   create_table "institutions", force: :cascade do |t|
