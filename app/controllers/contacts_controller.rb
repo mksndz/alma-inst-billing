@@ -65,6 +65,21 @@ class ContactsController < ApplicationController
     end
 
     def contact_params
-      params.fetch(:contact).permit(:name, :address, :phone, :email)
+      params.fetch(:contact).permit(
+          :name,
+          :address1,
+          :address2,
+          :zip,
+          :city,
+          :state,
+          :phone,
+          :email,
+          :notify,
+          :bill,
+          :branch_campus,
+          :feid,
+          :pay_to,
+          :pay_types,
+      )
     end
 end

@@ -16,8 +16,33 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :address, 'Address' %>
-    <%= f.text_field :address, class: 'form-control' %>
+    <%= f.label :address1, 'Address' %>
+    <%= f.text_field :address1, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :address2, 'Address (Line 2)' %>
+    <%= f.text_field :address2, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :city, 'City' %>
+    <%= f.text_field :city, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :state, 'State' %>
+    <%= f.text_field :state, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :zip, 'Zip Code' %>
+    <%= f.text_field :zip, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :branch_campus, 'Branch Campus' %>
+    <%= f.text_field :branch_campus, class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -28,6 +53,21 @@
   <div class="form-group">
     <%= f.label :email, 'Email' %>
     <%= f.text_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :feid, 'FE ID' %>
+    <%= f.text_field :feid, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :bill, 'Bill?' %>
+    <%= f.check_box :bill, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :notify, 'Notify?' %>
+    <%= f.check_box :notify, class: 'form-control' %>
   </div>
 
   <%= f.submit class: 'btn btn-primary' %>
