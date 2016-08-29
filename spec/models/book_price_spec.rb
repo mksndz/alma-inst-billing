@@ -19,7 +19,7 @@ RSpec.describe BookPrice, type: :model do
 
   it 'has a Integer price' do
     bp = Fabricate :book_price
-    expect(bp.price).to be_a Integer
+    expect(bp.price).to be_a Float
   end
 
   # VALIDATIONS

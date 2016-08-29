@@ -7,9 +7,9 @@ RSpec.describe Contact, type: :model do
     expect(c.name).to be_a String
   end
 
-  it 'has a String address' do
+  it 'has a String address1' do
     c = Fabricate :contact
-    expect(c.address).to be_a String
+    expect(c.address1).to be_a String
   end
 
   it 'has a String phone' do
