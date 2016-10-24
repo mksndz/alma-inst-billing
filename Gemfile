@@ -13,9 +13,9 @@ gem 'bootstrap', '~> 4.0.0.alpha3.1'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
-gem 'httparty'
 
 group :development, :test do
+  gem 'faker', '~> 1.6.6'
   gem 'rspec-rails', '~> 3.5'
   gem 'fabrication'
 end
