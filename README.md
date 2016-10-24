@@ -2,7 +2,7 @@
 
 Web frontend for institutions (and GIL staff) to manage configuration related to Alma 3rd party integrations.
 
-Configuration settings will be made available via API to 
+Configuration settings will be made available via API to other integration-related code and scripts.
 
 == Examples
 
