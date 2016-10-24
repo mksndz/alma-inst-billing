@@ -11,5 +11,6 @@ Fabricator(:institution) do
   state     { Faker::Address.state_abbr }
   zip       { Faker::Address.zip_code }
   api_key   { Faker::Crypto.md5 }
+  password  { Faker::Internet.password }
 
 end

@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :institutions
   resources :integrations
   resources :institutions do
     resources :contacts
   end
 
-  root 'application#index'
+  root to: 'application#index'
 
 end

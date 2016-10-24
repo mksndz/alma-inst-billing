@@ -1,5 +1,7 @@
 class Institution < ActiveRecord::Base
 
+  devise :database_authenticatable
+
   validates_presence_of :name, :code
   validates_uniqueness_of :name
 
