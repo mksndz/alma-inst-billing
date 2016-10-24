@@ -57,6 +57,16 @@ class InstitutionsController < ApplicationController
     end
 
     def institution_params
-      params.fetch(:institution).permit(:name, :address, :email, :api_key)
+      params.fetch(:institution).permit(
+          :name,
+          :code,
+          :address,
+          :address2,
+          :city,
+          :state,
+          :zip,
+          :email,
+          :phone,
+          :api_key)
     end
 end
