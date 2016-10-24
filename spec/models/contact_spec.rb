@@ -22,12 +22,12 @@ RSpec.describe Contact, type: :model do
       expect(c.email).to be_a String
     end
 
-    it 'has a String address1' do
-      expect(c.address1).to be_a String
+    it 'has a String address' do
+      expect(c.address).to be_a String
     end
 
     it 'has a String address2' do
-      expect(c.address1).to be_a String
+      expect(c.address2).to be_a String
     end
 
     it 'belongs to an Institution' do

@@ -7,7 +7,7 @@ Fabricator(:contact) do
   phone           { Faker::PhoneNumber.phone_number }
   email           { Faker::Internet.email }
   branch_campus   { Faker::Address.city_suffix }
-  address1        { Faker::Address.street_address }
+  address         { Faker::Address.street_address }
   address2        { Faker::Address.secondary_address }
   city            { Faker::Address.city }
   state           { Faker::Address.state_abbr }
