@@ -38,7 +38,7 @@ RSpec.describe Contact, type: :model do
 
     it 'must have a unique email' do
       expect {
-        Fabricate :contact
+        Fabricate(:contact) { email { c.email } }
       }.to raise_error ActiveRecord::RecordInvalid
     end
 

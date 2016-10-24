@@ -30,7 +30,7 @@ RSpec.describe Institution, type: :model do
 
     it 'must have a unique name' do
       expect {
-        Fabricate :institution
+        Fabricate(:institution) { name { i.name }  }
       }.to raise_error ActiveRecord::RecordInvalid
     end
 
