@@ -2,14 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Contact, type: :model do
 
-  it 'has a String name' do
+  it 'has a String first_name' do
     c = Fabricate :contact
-    expect(c.name).to be_a String
+    expect(c.first_name).to be_a String
   end
-
-  it 'has a String address1' do
+  it 'has a String last_name' do
     c = Fabricate :contact
-    expect(c.address1).to be_a String
+    expect(c.last_name).to be_a String
   end
 
   it 'has a String phone' do
@@ -22,19 +21,22 @@ RSpec.describe Contact, type: :model do
     expect(c.email).to be_a String
   end
 
+  it 'has a String address1' do
+    c = Fabricate :contact
+    expect(c.address1).to be_a String
+  end
+
+  it 'has a String address2' do
+    c = Fabricate :contact
+    expect(c.address1).to be_a String
+  end
+
   it 'belongs to an Institution' do
     c = Fabricate :contact
     expect(c.institution).to be_an Institution
   end
 
   # VALIDATIONS
-
-  it 'must have a unique name' do
-    Fabricate :contact
-    expect {
-      Fabricate :contact
-    }.to raise_error ActiveRecord::RecordInvalid
-  end
 
   it 'must have a unique email' do
     Fabricate :contact
