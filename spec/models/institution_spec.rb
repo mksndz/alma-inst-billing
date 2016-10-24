@@ -52,5 +52,4 @@ RSpec.describe Institution do
 
   end
 
-
 end

@@ -4,5 +4,7 @@ class Institution < ActiveRecord::Base
   validates_uniqueness_of :name
 
   has_many :contacts, dependent: :destroy
+  has_many :integration_configs
+  has_many :integrations, through: :integration_configs
 
 end

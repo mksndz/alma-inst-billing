@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024200317) do
+ActiveRecord::Schema.define(version: 20161024211615) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "phone",          null: false
@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(version: 20161024200317) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+  end
+
+  create_table "integration_configs", force: :cascade do |t|
+    t.integer  "institution_id"
+    t.integer  "integration_id"
+    t.text     "config"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "integration_configs", ["institution_id"], name: "index_integration_configs_on_institution_id"
+  add_index "integration_configs", ["integration_id"], name: "index_integration_configs_on_integration_id"
+
+  create_table "integrations", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
   end
 
 end
