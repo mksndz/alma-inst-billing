@@ -13,7 +13,6 @@
     <tbody>
     <% @institutions.each do |institution| %>
         <tr>
-          <td><%= link_to institution.name, institution_alma_api_sandbox_path(institution) %></td>
           <td><%= link_to institution.contacts.length, institution_contacts_path(institution) %></td>
           <td><%= link_to 'Add Contact', new_institution_contact_path(institution) %></td>
           <td><%= link_to 'Show', institution %></td>
