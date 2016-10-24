@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Contact, type: :model do
+RSpec.describe Contact do
 
   context :default do
 
@@ -12,6 +12,10 @@ RSpec.describe Contact, type: :model do
 
     it 'has a String last_name' do
       expect(c.last_name).to be_a String
+    end
+
+    it 'has a String branch_campus' do
+      expect(c.branch_campus).to be_a String
     end
 
     it 'has a String phone' do
@@ -28,6 +32,18 @@ RSpec.describe Contact, type: :model do
 
     it 'has a String address2' do
       expect(c.address2).to be_a String
+    end
+
+    it 'has a String city' do
+      expect(c.city).to be_a String
+    end
+
+    it 'has a String state' do
+      expect(c.state).to be_a String
+    end
+
+    it 'has a String zip' do
+      expect(c.zip).to be_a String
     end
 
     it 'belongs to an Institution' do

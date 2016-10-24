@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Institution, type: :model do
+RSpec.describe Institution do
 
   context :default do
 
@@ -10,8 +10,28 @@ RSpec.describe Institution, type: :model do
       expect(i.name).to be_a String
     end
 
+    it 'has a String code' do
+      expect(i.code).to be_a String
+    end
+
     it 'has a String address' do
       expect(i.address).to be_a String
+    end
+
+    it 'has a String address2' do
+      expect(i.address2).to be_a String
+    end
+
+    it 'has a String city' do
+      expect(i.city).to be_a String
+    end
+
+    it 'has a String state' do
+      expect(i.state).to be_a String
+    end
+
+    it 'has a String zip' do
+      expect(i.zip).to be_a String
     end
 
     it 'has a String phone' do
@@ -20,10 +40,6 @@ RSpec.describe Institution, type: :model do
 
     it 'has a String api_key' do
       expect(i.api_key).to be_a String
-    end
-
-    it 'has a String code' do
-      expect(i.code).to be_a String
     end
 
     # VALIDATIONS
