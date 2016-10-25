@@ -3,7 +3,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :institution %><br />
-    <%= f.collection_select(:id, Institution.all, :id, :name, autofocus: true) %>
+    <%= f.collection_select(:code, Institution.all, :code, :name, autofocus: true) %>
   </div>
 
   <div class="field">
