@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20161025112226) do
   create_table "integrations", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "api_key"
   end
 
 end
