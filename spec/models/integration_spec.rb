@@ -14,6 +14,10 @@ RSpec.describe Integration do
       expect(i.description).to be_a String
     end
 
+    it 'has a String api key' do
+      expect(i.api_key).to be_a String
+    end
+
     # VALIDATIONS
 
     it 'must have a name' do
