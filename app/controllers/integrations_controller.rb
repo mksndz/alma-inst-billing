@@ -13,6 +13,7 @@ class IntegrationsController < ApplicationController
   # GET /integrations/new
   def new
     @integration = Integration.new
+    @integration.api_key = SecureRandom.hex
   end
 
   # GET /integrations/1/edit

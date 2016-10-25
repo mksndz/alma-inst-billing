@@ -1,0 +1,27 @@
+<h1>Integrations</h1>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-default">
+    <tr>
+      <th>Name</th>
+      <th>Institution Configs</th>
+      <th colspan="4"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @integrations.each do |integration| %>
+        <tr>
+          <td><%= link_to integration.name, integration_path(integration) %></td>
+          <td><%= integration.integration_configs.length %></td>
+          <td><%= link_to 'Show', integration %></td>
+          <td><%= link_to 'Edit', edit_integration_path(integration) %></td>
+          <td><%= link_to 'Destroy', integration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Add Integration', new_integration_path, class: 'btn btn-outline-primary' %>

@@ -1,0 +1,14 @@
+<h1><%= @integration.name %></h1>
+
+<p>
+  <strong>Name: </strong> <%= @integration.name %>
+</p>
+<p>
+  <strong>Description: </strong> <%= @integration.description %>
+</p>
+<p>
+  <strong>API Key: </strong> <%= @integration.api_key %>
+</p>
+
+<%= link_to 'Edit', edit_integration_path(@integration) %> |
+<%= link_to 'Back', integrations_path %>
