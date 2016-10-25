@@ -180,6 +180,7 @@ institutions = [
       code: 'usg',
       password: 'password',
       password_confirmation: 'password',
+      god: 'true'
     },
 
 ]

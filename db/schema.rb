@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024221611) do
+ActiveRecord::Schema.define(version: 20161025111151) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "phone",          null: false
@@ -30,18 +30,19 @@ ActiveRecord::Schema.define(version: 20161024221611) do
   end
 
   create_table "institutions", force: :cascade do |t|
-    t.string   "name",                                       null: false
+    t.string   "name",                                          null: false
     t.string   "address"
     t.string   "phone"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.string   "api_key"
     t.string   "code",               limit: 12
     t.string   "address2"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.string   "encrypted_password",            default: "", null: false
+    t.string   "encrypted_password",            default: "",    null: false
+    t.boolean  "god",                           default: false
   end
 
   create_table "integration_configs", force: :cascade do |t|

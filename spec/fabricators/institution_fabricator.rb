@@ -14,3 +14,9 @@ Fabricator(:institution) do
   password  { Faker::Internet.password }
 
 end
+
+Fabricator(:god_institution, from: :institution) do
+
+  god       { true }
+
+end
