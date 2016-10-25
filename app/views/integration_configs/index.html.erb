@@ -13,8 +13,8 @@
     <tbody>
     <% @integration_configs.each do |integration_config| %>
         <tr>
-          <td><%= link_to integration_config.institution.name %></td>
-          <td><%= link_to integration_config.integration.name %></td>
+          <td><%= link_to integration_config.institution.name, institution_path(integration_config.institution) %></td>
+          <td><%= link_to integration_config.integration.name, integration_path(integration_config.integration) %></td>
           <td><%= link_to 'Show', integration_config %></td>
           <td><%= link_to 'Edit', edit_integration_config_path(integration_config) %></td>
           <td><%= link_to 'Destroy', integration_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>
