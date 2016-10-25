@@ -42,6 +42,10 @@ RSpec.describe Institution do
       expect(i.api_key).to be_a String
     end
 
+    it 'has boolean god' do
+      expect(i.god).to be_in([true, false])
+    end
+
     # VALIDATIONS
 
     it 'must have a unique name' do
