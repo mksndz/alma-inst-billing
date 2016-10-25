@@ -1,0 +1,14 @@
+<h1>Config Details</h1>
+
+<p>
+  <strong>Institution: </strong> <%= @integration_config.institution.name %>
+</p>
+<p>
+  <strong>Integration: </strong> <%= @integration_config.integration.name %>
+</p>
+<p>
+  <strong>Config Hash: </strong> <%= @integration_config.config %>
+</p>
+
+<%= link_to 'Edit', edit_integration_config_path(@integration_config) %> |
+<%= link_to 'Back', integration_configs_path %>

@@ -1,0 +1,32 @@
+<%= form_for(@integration_config) do |f| %>
+
+  <% if @integration_config.errors.any? %>
+    <div class="alert alert-danger">
+      <strong><%= pluralize(@integration_config.errors.count, 'error') %> prohibited this Integration Config from being saved:</strong>
+
+      <ul>
+      <% @integration_config.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :institution, '*Institution' %>
+    <%= f.collection_select :institution_id, Institution.all, :id, :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :integration, '*Integration' %>
+    <%= f.collection_select :integration_id, Integration.all, :id, :name, class: 'form-control' %>
+  </div>
+    
+  <div class="form-group">
+    <%= f.label :config, 'Config Hash' %>
+    <%= f.text_area :config, class: 'form-control', rows: 20 %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+
+<% end %>
