@@ -57,6 +57,6 @@ class IntegrationsController < ApplicationController
     end
 
     def integration_params
-      params.fetch(:integration).permit(:name, :description)
+      params.fetch(:integration).permit(:name, :description, :api_key)
     end
 end
