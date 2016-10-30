@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     resources :contacts
   end
 
+  scope '/api' do
+    get '/:inst/config', to: 'endpoint#config', constraints: { id: /\w+/ }
+    get '/:inst/contacts', to: 'endpoint#contacts', constraints: { id: /\w+/ }
+  end
+
   root to: 'application#index'
 
 end
