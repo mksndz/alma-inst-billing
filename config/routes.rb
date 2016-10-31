@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   scope '/api' do
-    get '/:inst/config', to: 'endpoint#config', constraints: { id: /\w+/ }
+    get '/:inst/settings', to: 'endpoint#settings', constraints: { id: /\w+/ }
     get '/:inst/contacts', to: 'endpoint#contacts', constraints: { id: /\w+/ }
   end
 

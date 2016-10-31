@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe EndpointController, type: :routing do
   describe 'routing' do
 
-    it 'routes to #config' do
-      expect(get: '/api/test/config').to route_to('endpoint#config', inst: 'test')
+    it 'routes to #settings' do
+      expect(get: '/api/test/settings').to route_to('endpoint#settings', inst: 'test')
     end
 
     it 'routes to #contacts' do
