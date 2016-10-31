@@ -10,6 +10,10 @@ describe EndpointController do
       let(:ic) { Fabricate :integration_config }
 
       before(:each) do
+
+        # add contacts to integration
+        ic.integration.contacts << ic.institution.contacts
+
         request.env['HTTP_AUTHORIZATION'] = ic.integration.api_key
         get :contacts, {
             inst: ic.institution.code,

@@ -33,7 +33,7 @@ class EndpointController < ApplicationController
 
   def contacts
 
-    @contacts = @institution.contacts
+    @contacts = @integration.contacts.where(institution_id: @institution.id)
 
   end
 
