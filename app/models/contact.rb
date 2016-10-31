@@ -2,6 +2,7 @@ class Contact < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
+  has_and_belongs_to_many :integrations
   belongs_to :institution
 
   def name

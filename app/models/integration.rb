@@ -5,5 +5,6 @@ class Integration < ActiveRecord::Base
 
   has_many :integration_configs
   has_many :institutions, through: :integration_configs
+  has_and_belongs_to_many :contacts
 
 end
