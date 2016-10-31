@@ -47,7 +47,8 @@ RSpec.describe Contact do
     end
 
     it 'belongs to an Institution' do
-      expect(c.institution).to be_an Institution
+      cwi = Fabricate :contact_with_institution
+      expect(cwi.institution).to be_an Institution
     end
 
     # VALIDATIONS

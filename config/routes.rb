@@ -8,8 +8,13 @@ Rails.application.routes.draw do
   end
 
   scope '/api' do
-    get '/:inst/settings', to: 'endpoint#settings', constraints: { id: /\w+/ }
-    get '/:inst/contacts', to: 'endpoint#contacts', constraints: { id: /\w+/ }
+    constraints(
+        format: :json,
+        id: /\w+/
+    ) do
+      get '/:inst/settings', to: 'endpoint#settings'
+      get '/:inst/contacts', to: 'endpoint#contacts'
+    end
   end
 
   root to: 'application#index'

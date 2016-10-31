@@ -1,0 +1,1 @@
+json.array! @contacts, :name, :email, :branch_campus, :created_at

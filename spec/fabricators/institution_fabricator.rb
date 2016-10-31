@@ -13,6 +13,8 @@ Fabricator(:institution) do
   api_key   { Faker::Crypto.md5 }
   password  { Faker::Internet.password }
 
+  contacts(count: 2)
+
 end
 
 Fabricator(:god_institution, from: :institution) do

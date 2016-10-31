@@ -13,6 +13,10 @@ Fabricator(:contact) do
   state           { Faker::Address.state_abbr }
   zip             { Faker::Address.zip_code }
 
+end
+
+Fabricator(:contact_with_institution, from: :contact) do
+
   institution
 
 end
