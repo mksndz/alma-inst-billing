@@ -1,4 +1,4 @@
-class IntegrationConfigsController < ApplicationController
+class IntegrationConfigsController < SecureController
   before_action :set_integration_config, only: [:show, :edit, :update, :destroy]
 
   # GET /integration_configs

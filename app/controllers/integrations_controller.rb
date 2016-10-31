@@ -1,4 +1,4 @@
-class IntegrationsController < ApplicationController
+class IntegrationsController < SecureController
   before_action :set_integration, only: [:show, :edit, :update, :destroy]
 
   # GET /integrations

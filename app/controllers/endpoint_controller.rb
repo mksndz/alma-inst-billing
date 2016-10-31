@@ -1,8 +1,6 @@
 class EndpointController < ApplicationController
 
-  before_action :get_institution_and_integration
-
-  # rescue_from ActiveModel::
+  before_action :set_data
 
   def settings
 
@@ -12,15 +10,13 @@ class EndpointController < ApplicationController
 
   def contacts
 
-    @contacts = Institution.contacts
-
-    c = @contacts.count
+    @contacts = @institution.contacts
 
   end
 
   private
 
-    def get_institution_and_integration
+    def set_data
 
       @institution = Institution.find_by_code params[:inst]
       # @integration = Integration.find_by_api_key
