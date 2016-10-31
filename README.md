@@ -14,7 +14,7 @@ For an array of contacts (name, email, branch campus, created datetime) from an 
 
     GET '/api/uga/contacts'
     
-### TO get an Integration Configuration object
+### To get an Integration Configuration object
  
 For an integration/institution combo:
 
