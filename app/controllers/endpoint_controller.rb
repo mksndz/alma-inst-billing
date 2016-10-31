@@ -1,10 +1,33 @@
+require 'logger'
+
 class EndpointController < ApplicationController
 
-  before_action :set_data
+  class InvalidRequest < StandardError; end
+
+  before_action :validate_request
+
+  rescue_from ActiveRecord::RecordNotFound do
+    render nothing: true, status: :not_found
+  end
+
+  rescue_from InvalidRequest do
+    render nothing: true, status: :unauthorized
+  end
 
   def settings
 
+    ics = IntegrationConfig.where(
+        institution_id: @institution.id,
+        integration_id: @integration.id
+    )
 
+    @ic = ics.first
+
+    if @ic
+      render :settings
+    else
+      render nothing: true, status: :no_content
+    end
 
   end
 
@@ -16,10 +39,18 @@ class EndpointController < ApplicationController
 
   private
 
-    def set_data
+    def validate_request
 
-      @institution = Institution.find_by_code params[:inst]
-      # @integration = Integration.find_by_api_key
+      @institution = Institution.where(code: params[:inst]).first
+      @integration = Integration.where(api_key: request.env['HTTP_AUTHORIZATION']).first
+
+      unless @institution
+        raise ActiveRecord::RecordNotFound
+      end
+
+      unless @integration
+        raise InvalidRequest
+      end
 
     end
 
