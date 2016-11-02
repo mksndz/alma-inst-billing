@@ -5,7 +5,8 @@ class ContactsController < SecureController
 
   # GET /contacts
   def index
-    @contacts = Contact.all
+    raise CanCan::AccessDenied unless can? :edit, @institution
+    @contacts = Contact.where institution_id: @institution.id
   end
 
   # GET /contacts/1

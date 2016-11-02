@@ -1,14 +1,15 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(institution)
+  def initialize(user)
 
-    if institution.god?
+    if user.god?
       can :manage, :all
     else
       can [:index, :show], Institution
-      can [:show, :edit, :update], Institution, id: institution.id
-      can :manage, Contact, institution_id: institution.id
+      can [:edit, :update], Institution, id: user.id
+      can :index, Contact
+      can [:show, :new, :create, :edit, :update, :destroy], Contact, institution_id: user.id
     end
 
   end
