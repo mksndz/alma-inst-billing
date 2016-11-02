@@ -28,16 +28,12 @@
     <div id="editor"><%= @integration_config.config || '{}' %></div>
   </div>
 
-
-
-
   <%= f.submit class: 'btn btn-primary' %>
 
 <% end %>
 
 <script src="/ace/ace.js"></script>
 <script>
-
   $(document).ready(function(){
     var $editor = $('#editor');
     if ($editor.length > 0) {
@@ -49,5 +45,4 @@
       });
     }
   });
-
 </script>
