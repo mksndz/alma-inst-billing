@@ -9,9 +9,11 @@
   <div id="navbar">
     <nav class="nav navbar-nav pull-xs-left">
       <%= link_to 'Home', root_path, class: 'nav-item nav-link' %>
-      <%= link_to 'Institutions', institutions_path, class: 'nav-item nav-link' %>
-      <%= link_to 'Integrations', integrations_path, class: 'nav-item nav-link' %>
-      <%= link_to 'Configs', integration_configs_path, class: 'nav-item nav-link' %>
+      <% if current_institution %>
+        <%= link_to('Institutions', institutions_path, class: 'nav-item nav-link') %>
+        <%= link_to('Integrations', integrations_path, class: 'nav-item nav-link') if current_institution.is_god? %>
+        <%= link_to('Configs', integration_configs_path, class: 'nav-item nav-link') if current_institution.is_god?  %>
+      <% end %>
     </nav>
     <nav class="nav navbar-nav pull-xs-right">
       <% if current_institution %>

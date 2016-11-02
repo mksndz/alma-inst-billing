@@ -1,5 +1,7 @@
 class SecureController < ApplicationController
 
-  before_action :authenticate_institution!
+  rescue_from CanCan::AccessDenied do |e|
+    redirect_to root_url, alert: e.message
+  end
 
 end

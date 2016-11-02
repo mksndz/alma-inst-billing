@@ -9,4 +9,8 @@ class Institution < ActiveRecord::Base
   has_many :integration_configs
   has_many :integrations, through: :integration_configs
 
+  def is_god?
+    !!god
+  end
+
 end
