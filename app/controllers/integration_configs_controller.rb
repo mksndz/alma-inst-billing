@@ -1,5 +1,6 @@
 class IntegrationConfigsController < SecureController
-  before_action :set_integration_config, only: [:show, :edit, :update, :destroy]
+
+  load_and_authorize_resource
 
   # GET /integration_configs
   def index
@@ -52,9 +53,6 @@ class IntegrationConfigsController < SecureController
   end
 
   private
-    def set_integration_config
-      @integration_config = IntegrationConfig.find(params[:id])
-    end
 
     def integration_config_params
       params.fetch(:integration_config).permit(:institution_id, :integration_id, :config)

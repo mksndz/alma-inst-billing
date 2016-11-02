@@ -1,5 +1,6 @@
 class InstitutionsController < SecureController
-  before_action :set_institution, only: [:show, :edit, :update, :destroy]
+
+  load_and_authorize_resource
 
   # GET /institutions
   def index
@@ -52,9 +53,6 @@ class InstitutionsController < SecureController
   end
 
   private
-    def set_institution
-      @institution = Institution.find(params[:id])
-    end
 
     def institution_params
       params.fetch(:institution).permit(

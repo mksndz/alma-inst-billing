@@ -1,6 +1,7 @@
 class ContactsController < SecureController
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :set_institution
+
+  load_and_authorize_resource
 
   # GET /contacts
   def index
@@ -55,9 +56,6 @@ class ContactsController < SecureController
   end
 
   private
-    def set_contact
-      @contact = Contact.find(params[:id])
-    end
 
   def set_institution
       @institution = Institution.find(params[:institution_id])
