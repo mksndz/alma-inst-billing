@@ -17,8 +17,8 @@
           <td><%= link_to institution.contacts.length, institution_contacts_path(institution) %></td>
           <td><%= link_to 'Add Contact', new_institution_contact_path(institution) %></td>
           <td><%= link_to 'Show', institution %></td>
-          <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
-          <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to('Edit', edit_institution_path(institution)) if can? :edit, institution %></td>
+          <td><%= link_to('Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' }) if can? :destroy, institution %></td>
         </tr>
     <% end %>
     </tbody>
