@@ -19,7 +19,7 @@
       <% if current_institution %>
         <%= link_to "Sign Out: #{current_institution.name}", destroy_institution_session_url, method: :delete, class: 'nav-item nav-link' %>
       <% else %>
-        <%= link_to 'Sign In', new_institution_session_url, method: :delete, class: 'nav-item nav-link' %>
+        <%= link_to 'Sign In', new_institution_session_url, class: 'nav-item nav-link' %>
     <% end %>
     </nav>
   </div>
