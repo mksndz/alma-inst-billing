@@ -1,2 +1,8 @@
 // Custom bootstrap variables must be set or imported before bootstrap itself.
 @import "bootstrap";
+
+#editor {
+  height: 250px;
+  width: 50%;
+  padding-bottom: 20px;
+}
