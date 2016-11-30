@@ -1,5 +1,9 @@
 <h1>Modify Integration Configuration</h1>
 
-<%= render 'form' %>
+<% if has_custom_form?(@integration_config.integration) %>
+    <%= render integration_partial_for(@integration_config) %>
+<% else %>
+  <%= render 'form' %>
+<% end %>
 
 <%= link_to 'Back', integration_configs_path %>

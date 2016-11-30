@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031201717) do
+ActiveRecord::Schema.define(version: 20161130193718) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "phone",          null: false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20161031201717) do
     t.string "name"
     t.string "description"
     t.string "api_key"
+    t.string "partial"
   end
 
 end

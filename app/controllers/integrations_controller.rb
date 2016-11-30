@@ -56,6 +56,6 @@ class IntegrationsController < SecureController
   private
 
     def integration_params
-      params.fetch(:integration).permit(:name, :description, :api_key)
+      params.fetch(:integration).permit(:name, :description, :partial, :api_key)
     end
 end
